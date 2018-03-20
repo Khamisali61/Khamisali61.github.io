@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Name - HomeBooks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/main.css">
+
+    <style type="text/css">
+        .st0 {
+            fill: #Fa6330;
+        }
+
+        .st1 {
+            fill: #0078d7;
+        }
+
+        .st2 {
+            fill: #232424;
+        }
+
+        .st3 {
+            fill: #7a7a7a;
+        }
+
+        .q_logo a:hover .st0,
+        .q_logo a:focus .st0,
+        .q_logo a:focus .st1,
+        .q_logo a:hover .st1 {
+            -ms-animation-duration: 4s;
+            -o-animation-duration: 4s;
+            -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+            -ms-animation-timing-function: ease-in-out;
+            -o-animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+        }
+
+        .q_logo a:hover .st0,
+        .q_logo a:focus .st0 {
+            -ms-animation-name: animateLogoLeft;
+            -o-animation-name: animateLogoLeft;
+            -webkit-animation-name: animateLogoLeft;
+            animation-name: animateLogoLeft;
+        }
+
+        .q_logo a:hover .st1,
+        .q_logo a:focus .st1 {
+            -ms-animation-name: animateLogoRight;
+            -o-animation-name: animateLogoRight;
+            -webkit-animation-name: animateLogoRight;
+            animation-name: animateLogoRight;
+        }
+
+        @keyframes animateLogoLeft {
+            0% {
+                -o-transform: none;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none;
+            }
+            50% {
+                -o-transform: translateY(16px);
+                -webkit-transform: translateY(16px);
+                -ms-transform: translateY(16px);
+                transform: translateY(16px);
+            }
+            100% {
+                -o-transform: none;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes animateLogoRight {
+            0% {
+                -o-transform: none;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none;
+            }
+            25% {
+                -o-transform: translateX(32px);
+                -webkit-transform: translateX(32px);
+                -ms-transform: translateX(32px);
+                transform: translateX(32px);
+            }
+            50% {
+                -o-transform: translateX(32px) rotate(3.5deg);
+                -webkit-transform: translateX(32px) rotate(3.5deg);
+                -ms-transform: translateX(32px) rotate(3.5deg);
+                transform: translateX(32px) rotate(3.5deg);
+            }
+            75% {
+                -o-transform: translateX(32px) rotate(-3.5deg);
+                -webkit-transform: translateX(32px) rotate(-3.5deg);
+                -ms-transform: translateX(32px) rotate(-3.5deg);
+                transform: translateX(32px) rotate(-3.5deg);
+            }
+            100% {
+                -o-transform: none;
+                -webkit-transform: none;
+                -ms-transform: none;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="layout">
+            <div class="layout--header">
+                <header class="header">
+                    <div class="container">
+                        <div class="header--inner">
+
+                            <div class="row vertical-align">
+
+                                <div class="col-lg-2 col-md-2">
+
+                                    <div class="header--logo q_logo">
+                                        <a href="">
+                                            <img src="assets/logo.png" alt="hello-books logo"  >
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="header--right">
+                                        <nav class="header-nav">
+                                            <div class="header-nav--inner">
+                                                <ul class="menu">
+                                                    <li class="menu-item">
+                                                        <a href="#">Home</a>
+                                                    </li>
+                                                    <li class="menu-item">
+                                                        <a href="view_lib.html">View Library</a>
+                                                    </li>
+
+                                                    <li class="menu-item menu-item-Usr" onclick="shwUsrProfile()">
+                                                        <a class="usrBtn">Profile</a>
+                                                        <div id="profile-stuff" class="profile-dropdown">
+                                                            <ul class="sub-menu">
+                                                                <li><a href="user_profile.html">Profile</a></li>
+                                                                <li><a href="#">Messages</a></li>
+                                                                <li><a href="#">Add Book</a></li>
+                                                                <li><a href="#">Logout</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+													<li class="menu-item">
+                                                        <a href="admin.html">Admin</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header--menu-opener">
+                        <span id="hamburger" class="c-hamburger c-hamburger--htx visible-xs-block visible-sm-block">
+                                            <span>toggle menu</span>
+                        </span>
+                    </div>
+                </header>
+
+            </div>
+            <div id="page-content">
+                <div class="layout--container">
+                    <div class="layout-header">
+                        <div class="container">
+                            <h1 class="page_header--title">Admin Panel</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <nav class="breadcrumbs">
+                        <div class="container">
+                            <ul class="breadcrumbs--list">
+                                <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link -active">Home</a></li>
+                                <li class="breadcrumbs--item"><a href="#" class="breadcrumbs--link">Admin Panel</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="section">
+                        <div class="container">
+                            <div class="innerSection">
+
+
+                                <div class="tabbed-header">
+                                    <ul class="tbbd">
+                                        <li class="tabbednav active"><a href="#" onclick="changeTab(event, 'NewBook')">Add New Book</a></li>
+                                        <li class="tabbednav"><a href="#" onclick="changeTab(event, 'NewAuth')">Add New Author</a></li>
+                                        <li class="tabbednav"><a href="#">Manage Books</a></li>
+                                        <li class="tabbednav"><a href="#">Delete Books</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tabbed-content">
+                                    <div id="NewBook" class="tabs-item active">
+                                        <div class="tabs-item-content">
+                                            <h2 class="tabs-title"> <span>Add a New Book</span></h2>
+                                            <form>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label class="sr-only" for="bk-Title">Book Title</label>
+                                                            <input type="text" name="bk-Title" placeholder="Book Title..." class="bk-Title form-control" id="bk-Title">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label class="sr-only" for="bk-Author">Author</label>
+                                                            <input type="text" placeholder="Authors..." onkeyup="searchAuthors(this)" class="bk-author form-control" id="bk-author">
+                                                            
+                                                            <ul class="author-list">
+                                                                <li>
+                                                                    <a href="">Lurene McDaniel
+                                                                        <span>1944</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="">Kirby Larson
+                                                                        <span>1954</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label class="sr-only" for="bk-year">Publish Year</label>
+                                                            <input type="text" name="bk-year" placeholder="Publish Year..." class="bk-year form-control" id="bk-year">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label class="sr-only" for="bk-year">Description</label>
+                                                            <textarea name="bk-disc" placeholder="Book Description..." class="bk-disc form-control" id="bk-disc"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            Upload Book Image
+                                                            <label class="sr-only" for="bk-file">Upload Image</label>
+                                                            <input type="file" name="bk-file" placeholder="Upload Image..." class="bk-file form-control" id="bk-file">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <button type="submit" class="btn">Add Book</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="NewAuth" class="tabs-item">
+                                        <div class="tabs-item-content">
+                                            <h2 class="tabs-title"><span>Add New Author</span></h2>
+                                            <form>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <label class="sr-only" for="bk-AFName">Author First Name</label>
+                                                            <input type="text" name="bk-AFName" placeholder="Author First Name..." class="bk-AFName form-control" id="bk-AFName">
+                                                            
+                                                        </div>
+
+                                                        <div class="col-md-offset-2 col-md-4">
+                                                            <label class="sr-only" for="bk-ALName">Author Last Name</label>
+                                                            <input type="text" placeholder="Author Last Name..." onkeyup="searchAuthors(this)" class="bk-ALName form-control" id="bk-ALName">
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <button type="submit" class="btn">Create Author</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!--
+                                        <div class="tabs-item">
+                                            <form>
+                                                   <div class="row">
+                                                    <div class="col-md-6 col-xs-12">
+                                                        <label class="sr-only" for="auth-firstName">First name</label>
+                                                        <input type="text" name="trg-firstName" placeholder="First name..." class="reg-firstName form-control" id="reg-firstName">
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-12">
+                                                        <label class="sr-only" for="reg-lastName">Last name</label>
+                                                        <input type="text" name="reg-lastName" placeholder="Last name..." class="reg-LastName form-control" id="reg-LastName">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>-->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section_divider"></div>
+                    <div class="section">
+                        <div class="container">
+
+                        </div>
+                        <div class="section -pattern -light">
+                            <div class="container">
+
+                            </div>
+                        </div>
+
+                        <div class="layout--footer">
+                            <footer class="footer">
+                                <div class="footer--inner">
+                                    <div class="container">
+                                        <div class="footer-copyrights">
+                                            <div class="footer-copyrights--container">
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="footer-copyrights--item">
+                                                            <div class="footer-copyrights--logo">
+                                                               <img src="assets/logo.png" alt="hello-books logo"  >
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="footer-copyrights--item">
+                                                            <p class="footer-copyrights--item_copyrights">Copyright Hello-Books 2018&copy;.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="msg-modal" class="modal">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <span class="close" id="closebtn" onclick="clsbtn()">&times;</span>
+                        <h2 id="modal-head">Borrow Book:</h2>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <p>Your membership level does not enable you borrow this book at the moment</p>
+                        <p>You have borrowed maximum number of books available to you</p>
+                        <a href="membership.html"><button class="btn">Upgrade Membership</button></a>
+                        <p>--Or--</p>
+                        <a href="user_profile.html"><button class="btn">Return Books</button></a>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                //JQuery scripts
+                $(function () {
+                    if ($('.c-hamburger').length) { //for nav menu 
+                        const toggleHandler = function toggleHandler(toggle) {
+                            toggle.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                this.classList.contains('is-active') === true ? this.classList.remove(
+                                    'is-active') : this.classList.add('is-active');
+                                $('.header-nav .menu').slideToggle();
+                            });
+                        };
+
+                        const toggles = document.querySelectorAll('.c-hamburger');
+
+                        for (let i = toggles.length - 1; i >= 0; i--) {
+                            const toggle = toggles[i];
+                            toggleHandler(toggle);
+                        };
+                    }
+                    $('#chk_all').change(function () {
+                        if ($('#chk_all').prop('checked')) { //if checked
+                            $('.checkbox').prop('checked', false);
+                            $('.checkbox').attr('disabled', true);
+                            $('#chk_all').attr('disabled', false);
+                            $('#chk_all').prop('checked', true);
+                        } else {
+                            $('.checkbox').attr('disabled', false);
+                        }
+                    });
+                });
+            </script>
+            <script type="text/javascript ">
+                function searchAuthors(authName) {
+
+                    if (authName.value.length >= 1) {
+
+                        document.getElementsByClassName('author-list')[0].style.display = "block";
+                    } else {
+                        document.getElementsByClassName('author-list')[0].style.display = "none";
+                    }
+                }
+
+                function changeTab(evnt, tabChanged) {
+                    //var i, tabcontent, tablinks;
+                    let tabContent = document.getElementsByClassName('tabs-item');
+                    for (let i = 0; i < tabContent.length; i++) {
+                        tabContent[i].style.display = "none";
+                    }
+                    let tabbednav = document.getElementsByClassName('tabbednav');
+                    for (let i = 0; i < tabbednav.length; i++) {
+                        tabbednav[i].className = tabbednav[i].className.replace('active', "");
+                    }
+                    document.getElementById(tabChanged).style.display = "block";
+                    // evnt.currentTarget.className += " active";
+                }
+                //document.getElementById(defaultOpen").click();
+                let msgModalBox = document.getElementById('msg-modal');
+                let closebtn = document.getElementById('closebtn');
+
+                function clsbtn() {
+                    msgModalBox.style.display = "none";
+                }
+
+                function borrowBookModal() {
+                    //let msgSubject = msgText.getElementsByTagName('td')[0].innerHTML;
+                    //let msgTextmsg = msgText.getElementsByTagName('td')[1].innerHTML;
+
+                    //document.getElementById('modal-head').innerHTML = 'Subject: ' + msgSubject;
+                    //document.getElementById('modal-body').innerHTML = '<p>' + msgTextmsg + '</p>';
+                    msgModalBox.style.display = "block";
+                }
+
+                function msgModal(msgText) {
+                    let msgSubject = msgText.getElementsByTagName('td')[0].innerHTML;
+                    let msgTextmsg = msgText.getElementsByTagName('td')[1].innerHTML;
+
+                    document.getElementById('modal-head').innerHTML = 'Subject: ' + msgSubject;
+                    document.getElementById('modal-body').innerHTML = '<p>' + msgTextmsg + '</p>';
+                    msgModalBox.style.display = "block";
+                }
+
+                function bookSearch(searchField) {
+                    // Declare found as default false
+                    let found = false;
+                    //convert method's value to uppercase
+                    const filterSearch = searchField.value.toUpperCase();
+                    //get HTML of entire table
+                    const tableSearch = document.getElementById('all-books-table');
+                    //return indexed HTML of columns in the tbody tag
+                    const tbodySearch = tableSearch.getElementsByTagName('tbody');
+                    const trSearch = tbodySearch[0].getElementsByTagName('tr');
+
+
+
+                    // Loop through all table rows, and hide those who don't match the search query
+                    for (let i = 0; i < trSearch.length; i++) {
+                        //Search through all elements that have been classed for searching
+                        let tSearch = trSearch[i].getElementsByClassName('book-searchable');
+
+                        for (let j = 0; j < tSearch.length; j++) {
+                            if (tSearch[j].innerHTML.toUpperCase().includes(filterSearch) == true) {
+                                found = true;
+                            }
+                        }
+                        if (found) {
+                            trSearch[i].style.display = "";
+                            found = false;
+                        } else {
+                            trSearch[i].style.display = "none";
+                        }
+
+                    }
+                }
+
+                function shwUsrProfile() { //if profile is clicked
+                    document.getElementById('profile-stuff').classList.toggle('show');
+                }
+                window.onclick = function (event) { //if any part of window is clicked
+                    if (event.target.matches('msgModalBox')) {
+                        msgModalBox.style.display = "none";
+                    }
+                    if (!event.target.matches('.usrBtn') && !event.target.matches('.menu-item-Usr')) { //if outside the profile is clicked
+
+                        const dropdowns = document.getElementsByClassName('profile-dropdown');
+
+                        for (let i = 0; i < dropdowns.length; i++) {
+                            let openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) { //show or hide that menu
+                                openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
+</body>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Your Name - HomeBooks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="assets/main.css">
+
+  <style type="text/css">
+    .st0 {
+      fill: #Fa6330;
+    }
+
+    .st1 {
+      fill: #0078d7;
+    }
+
+    .st2 {
+      fill: #232424;
+    }
+
+    .st3 {
+      fill: #7a7a7a;
+    }
+
+    .q_logo a:hover .st0,
+    .q_logo a:focus .st0,
+    .q_logo a:focus .st1,
+    .q_logo a:hover .st1 {
+      -ms-animation-duration: 4s;
+      -o-animation-duration: 4s;
+      -webkit-animation-duration: 4s;
+      animation-duration: 4s;
+      -ms-animation-timing-function: ease-in-out;
+      -o-animation-timing-function: ease-in-out;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    .q_logo a:hover .st0,
+    .q_logo a:focus .st0 {
+      -ms-animation-name: animateLogoLeft;
+      -o-animation-name: animateLogoLeft;
+      -webkit-animation-name: animateLogoLeft;
+      animation-name: animateLogoLeft;
+    }
+
+    .q_logo a:hover .st1,
+    .q_logo a:focus .st1 {
+      -ms-animation-name: animateLogoRight;
+      -o-animation-name: animateLogoRight;
+      -webkit-animation-name: animateLogoRight;
+      animation-name: animateLogoRight;
+    }
+
+    @keyframes animateLogoLeft {
+      0% {
+        -o-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+      }
+      50% {
+        -o-transform: translateY(16px);
+        -webkit-transform: translateY(16px);
+        -ms-transform: translateY(16px);
+        transform: translateY(16px);
+      }
+      100% {
+        -o-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+      }
+    }
+
+    @keyframes animateLogoRight {
+      0% {
+        -o-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+      }
+      25% {
+        -o-transform: translateX(32px);
+        -webkit-transform: translateX(32px);
+        -ms-transform: translateX(32px);
+        transform: translateX(32px);
+      }
+      50% {
+        -o-transform: translateX(32px) rotate(3.5deg);
+        -webkit-transform: translateX(32px) rotate(3.5deg);
+        -ms-transform: translateX(32px) rotate(3.5deg);
+        transform: translateX(32px) rotate(3.5deg);
+      }
+      75% {
+        -o-transform: translateX(32px) rotate(-3.5deg);
+        -webkit-transform: translateX(32px) rotate(-3.5deg);
+        -ms-transform: translateX(32px) rotate(-3.5deg);
+        transform: translateX(32px) rotate(-3.5deg);
+      }
+      100% {
+        -o-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div class="layout">
+      <div class="layout--header">
+        <header class="header">
+          <div class="container">
+            <div class="header--inner">
+
+              <div class="row vertical-align">
+
+                <div class="col-lg-2 col-md-2">
+
+                  <div class="header--logo q_logo">
+                    <a href="">
+                      <img src="assets/logo.png" alt="hello-books logo"  >
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                  <div class="header--right">
+                    <nav class="header-nav">
+                      <div class="header-nav--inner">
+                        <ul class="menu">
+                          <li class="menu-item">
+                            <a href="#">Home</a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="view_lib.html">View Library</a>
+                          </li>
+
+                          <li class="menu-item menu-item-Usr" onclick="shwUsrProfile()">
+                            <a class="usrBtn">Profile</a>
+                            <div id="profile-stuff" class="profile-dropdown">
+                              <ul class="sub-menu">
+                                <li>
+                                  <a href="profile.html">Profile</a>
+                                </li>
+                                <li>
+                                  <a href="#">Messages</a>
+                                </li>
+                                <li>
+                                  <a href="#">Membership</a>
+                                </li>
+                                <li>
+                                  <a href="index.html">Logout</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header--menu-opener">
+            <span id="hamburger" class="c-hamburger c-hamburger--htx visible-xs-block visible-sm-block">
+              <span>toggle menu</span>
+            </span>
+          </div>
+        </header>
+
+      </div>
+      <div id="page-content">
+        <div class="layout--container">
+          
+          <nav class="breadcrumbs">
+            <div class="container">
+              <ul class="breadcrumbs--list">
+                <li class="breadcrumbs--item">
+                  <a href="#" class="breadcrumbs--link">Home</a>
+                </li>
+                <li class="breadcrumbs--item">
+                  <a href="view_lib.html" class="breadcrumbs--link">Library</a>
+                </li>
+                <li class="breadcrumbs--item">
+                  <a href="user_profile.html" class="breadcrumbs--link -active">Book</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="section">
+            <div class="container">
+              <div class="innerSection">
+
+                <div class="row">
+                  <div class="col-sm-4">
+                    <img class="bkimg" src="assets/images/AngelofHope.jpg">
+                  </div>
+                  <div class="col-sm-6 col-md-offset-2">
+                    <div class="row">
+                      <table class="athble">
+                        <tr>
+                          <td style="min-width:10px">Authors:</td>
+                          <td class="authors">
+                            <a href="#" class="book-searchable">James Comey</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="row" style="padding-top:30px;padding-left:10px">Description:
+
+                      <p style="padding-top:10px;">In his forthcoming book, former FBI director James Comey shares his never-before-told experiences from some of the highest-stakes situations of his career in the past two decades of American government, exploring what good, ethical leadership looks like, and how it drives sound decisions. His journey provides an unprecedented entry into the corridors of power, and a remarkable lesson in what makes an effective leader.
+
+Mr. Comey served as director of the FBI from 2013 to 2017, appointed to the post by President Barack Obama. He previously served as U.S. attorney for the Southern District of New York, and the U.S. deputy attorney general in the administration of President George W. Bush. From prosecuting the Mafia and Martha Stewart to helping change the Bush administration's policies on torture and electronic surveillance, overseeing the Hillary Clinton e-mail investigation as well as ties between the Trump campaign and Russia, Comey has been involved in some of the most consequential cases and policies of recent history.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section_divider"></div>
+        <div class="section">
+          <div class="container">
+            <p> You have borrowed this book
+              <span style="color:#Fa6330">2</span> times,
+              <a href="book_review.html" style="color:#33c330;font-style:italic">Review?</a>
+            </p>
+            <p>Most recent time borrowed was on:
+              <span style="color:#Fa6330">24th June, 2017</span>
+            </p>
+            <p>There are
+              <span style="color:#Fa6330">2</span> Versions of this book available</p>
+            <button class="btn" onclick="borrowBookModal()">Return Book</button>
+            
+          </div>
+        </div>
+       
+
+        <div class="layout--footer">
+          <footer class="footer">
+            <div class="footer--inner">
+              <div class="container">
+                <div class="footer-copyrights">
+                  <div class="footer-copyrights--container">
+                    <div class="row">
+                      <div class="col-sm-6 col-xs-12">
+                        <div class="footer-copyrights--item">
+                          <div class="footer-copyrights--logo">
+                            <img src="assets/logo.png" alt="hello-books logo"  >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-xs-12">
+                        <div class="footer-copyrights--item">
+                          <p class="footer-copyrights--item_copyrights">Copyright Hello-Books 2018&copy;.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="msg-modal" class="modal">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <span class="close" id="closebtn" onclick="clsbtn()">&times;</span>
+        <h2 id="modal-head">Return Book:</h2>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <p>You have successfully returned the book</p>
+        
+        
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    //JQuery scripts
+    $(function () {
+      if ($('.c-hamburger').length) { //for nav menu 
+        const toggleHandler = function toggleHandler(toggle) {
+          toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            this.classList.contains('is-active') === true ? this.classList.remove(
+              'is-active') : this.classList.add('is-active');
+            $('.header-nav .menu').slideToggle();
+          });
+        };
+
+        const toggles = document.querySelectorAll('.c-hamburger');
+
+        for (let i = toggles.length - 1; i >= 0; i--) {
+          const toggle = toggles[i];
+          toggleHandler(toggle);
+        };
+      }
+      $('#chk_all').change(function () {
+        if ($('#chk_all').prop('checked')) { //if checked
+          $('.checkbox').prop('checked', false);
+          $('.checkbox').attr('disabled', true);
+          $('#chk_all').attr('disabled', false);
+          $('#chk_all').prop('checked', true);
+        } else {
+          $('.checkbox').attr('disabled', false);
+        }
+      });
+    });
+  </script>
+  <script type="text/javascript ">
+        let msgModalBox = document.getElementById('msg-modal');
+        let closebtn = document.getElementById('closebtn');
+
+        function clsbtn() {
+            msgModalBox.style.display = "none";
+        }
+
+        function borrowBookModal() {
+            //let msgSubject = msgText.getElementsByTagName('td')[0].innerHTML;
+            //let msgTextmsg = msgText.getElementsByTagName('td')[1].innerHTML;
+
+            //document.getElementById('modal-head').innerHTML = 'Subject: ' + msgSubject;
+            //document.getElementById('modal-body').innerHTML = '<p>' + msgTextmsg + '</p>';
+            msgModalBox.style.display = "block";
+        }
+
+        function msgModal(msgText) {
+            let msgSubject = msgText.getElementsByTagName('td')[0].innerHTML;
+            let msgTextmsg = msgText.getElementsByTagName('td')[1].innerHTML;
+
+            document.getElementById('modal-head').innerHTML = 'Subject: ' + msgSubject;
+            document.getElementById('modal-body').innerHTML = '<p>' + msgTextmsg + '</p>';
+            msgModalBox.style.display = "block";
+        }
+
+        function bookSearch(searchField) {
+            // Declare found as default false
+            let found = false;
+            //convert method's value to uppercase
+            const filterSearch = searchField.value.toUpperCase();
+            //get HTML of entire table
+            const tableSearch = document.getElementById('all-books-table');
+            //return indexed HTML of columns in the tbody tag
+            const tbodySearch = tableSearch.getElementsByTagName('tbody');
+            const trSearch = tbodySearch[0].getElementsByTagName('tr');
+
+
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (let i = 0; i < trSearch.length; i++) {
+                //Search through all elements that have been classed for searching
+                let tSearch = trSearch[i].getElementsByClassName('book-searchable');
+
+                for (let j = 0; j < tSearch.length; j++) {
+                    if (tSearch[j].innerHTML.toUpperCase().includes(filterSearch) == true) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    trSearch[i].style.display = "";
+                    found = false;
+                } else {
+                    trSearch[i].style.display = "none";
+                }
+
+            }
+        }
+
+        function shwUsrProfile() { //if profile is clicked
+            document.getElementById('profile-stuff').classList.toggle('show');
+        }
+        window.onclick = function (event) { //if any part of window is clicked
+            if (event.target.matches('msgModalBox')) {
+                msgModalBox.style.display = "none";
+            }
+            if (!event.target.matches('.usrBtn') && !event.target.matches('.menu-item-Usr')) { //if outside the profile is clicked
+
+                const dropdowns = document.getElementsByClassName('profile-dropdown');
+
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) { //show or hide that menu
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>

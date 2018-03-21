@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <title>View Library - Hello-books</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="assets/scripts/jquery.min.js"></script>
+ <link rel="stylesheet" href="assets/main.css">
+
+ <style type="text/css">
+  .st0 {
+   fill: #Fa6330;
+  }
+
+  .st1 {
+   fill: #0078d7;
+  }
+
+  .st2 {
+   fill: #232424;
+  }
+
+  .st3 {
+   fill: #7a7a7a;
+  }
+
+  .q_logo a:hover .st0,
+  .q_logo a:focus .st0,
+  .q_logo a:focus .st1,
+  .q_logo a:hover .st1 {
+   -ms-animation-duration: 4s;
+   -o-animation-duration: 4s;
+   -webkit-animation-duration: 4s;
+   animation-duration: 4s;
+   -ms-animation-timing-function: ease-in-out;
+   -o-animation-timing-function: ease-in-out;
+   -webkit-animation-timing-function: ease-in-out;
+   animation-timing-function: ease-in-out;
+  }
+
+  .q_logo a:hover .st0,
+  .q_logo a:focus .st0 {
+   -ms-animation-name: animateLogoLeft;
+   -o-animation-name: animateLogoLeft;
+   -webkit-animation-name: animateLogoLeft;
+   animation-name: animateLogoLeft;
+  }
+
+  .q_logo a:hover .st1,
+  .q_logo a:focus .st1 {
+   -ms-animation-name: animateLogoRight;
+   -o-animation-name: animateLogoRight;
+   -webkit-animation-name: animateLogoRight;
+   animation-name: animateLogoRight;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+	}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+	}
+
+  @keyframes animateLogoLeft {
+   0% {
+    -o-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+   }
+   50% {
+    -o-transform: translateY(16px);
+    -webkit-transform: translateY(16px);
+    -ms-transform: translateY(16px);
+    transform: translateY(16px);
+   }
+   100% {
+    -o-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+   }
+  }
+
+  @keyframes animateLogoRight {
+   0% {
+    -o-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+   }
+   25% {
+    -o-transform: translateX(32px);
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+   }
+   50% {
+    -o-transform: translateX(32px) rotate(3.5deg);
+    -webkit-transform: translateX(32px) rotate(3.5deg);
+    -ms-transform: translateX(32px) rotate(3.5deg);
+    transform: translateX(32px) rotate(3.5deg);
+   }
+   75% {
+    -o-transform: translateX(32px) rotate(-3.5deg);
+    -webkit-transform: translateX(32px) rotate(-3.5deg);
+    -ms-transform: translateX(32px) rotate(-3.5deg);
+    transform: translateX(32px) rotate(-3.5deg);
+   }
+   100% {
+    -o-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+   }
+  }
+ </style>
+</head>
+
+<body>
+ <div id="main">
+  <div class="layout">
+   <div class="layout--header">
+    <header class="header">
+     <div class="container">
+      <div class="header--inner">
+
+       <div class="row vertical-align">
+
+        <div class="col-lg-2 col-md-2">
+
+         <div class="header--logo q_logo">
+          <a href="">
+          <img src="assets/logo.png" alt="hello-books logo"  >
+          </a>
+         </div>
+        </div>
+        <div class="col-lg-10 col-md-10">
+         <div class="header--right">
+          <nav class="header-nav">
+           <div class="header-nav--inner">
+            <ul class="menu">
+             <li class="menu-item">
+              <a href="#">Home</a>
+             </li>
+             <li class="menu-item">
+              <a href="view_lib.html">View Library</a>
+             </li>
+
+             <li class="menu-item menu-item-Usr" onclick="shwUsrProfile()">
+              <a class="usrBtn">Profile</a>
+              <div id="profile-stuff" class="profile-dropdown">
+               <ul class="sub-menu">
+                <li>
+                 <a href="user_profile.html">Profile</a>
+                </li>
+                <li>
+                 <a href="#">Messages</a>
+                </li>
+                <li>
+                 <a href="#">Membership</a>
+                </li>
+                <li>
+                 <a href="#">Logout</a>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </nav>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="header--menu-opener">
+      <span id="hamburger" class="c-hamburger c-hamburger--htx visible-xs-block visible-sm-block">
+       <span>toggle menu</span>
+      </span>
+     </div>
+    </header>
+
+   </div>
+   <div id="page-content">
+    <div class="layout--container">
+     <div class="layout-header">
+      <div class="container">
+       <h1 class="page_header--title">View Library</h1>
+      </div>
+     </div>
+     <nav class="breadcrumbs">
+      <div class="container">
+       <ul class="breadcrumbs--list">
+        <li class="breadcrumbs--item">
+         <a href="#" class="breadcrumbs--link">Home</a>
+        </li>
+        <li class="breadcrumbs--item">
+         <a href="#" class="breadcrumbs--link -active">All Books</a>
+        </li>
+       </ul>
+      </div>
+     </nav>
+     
+    </div>
+    <div class="section_divider"></div>
+    <div class="section">
+     <div class="container">
+      <div class="row">
+       <span class="somfn" style="color:#ab34be"></span>
+       <div class="col-sm-6 form-control search-box">
+        <form>
+         <input type="search" id="book-search" class="book-search" onkeyup="bookSearch(this)" placeholder="Search Books...">
+        </form>
+       </div>
+      </div>
+      <div class="row table-outer">
+       <table class="all-books-table" id="all-books-table">
+        <thead>
+         <tr>
+          <th>
+           Book Name
+          </th>
+          <th>
+           Author(s)
+          </th>
+          <th>
+           Publish Year
+          </th>
+          <th>
+           Type
+          </th>
+
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td class="books-book-name">
+           <a href="book_profile.html" class="book-searchable">A higher loyalty</a>
+           <span class="tool-tiptext">
+            <img src=""> In his forthcoming book, former FBI director James Comey shares his never-before-told experiences from some of the highest-stakes situations of his career in the past two decades of American government, exploring what good, ethical leadership looks like, and how it drives sound decisions. His journey provides an unprecedented entry into the corridors of power, and a remarkable lesson in what makes an effective leader.
+           </span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">James Comey</a>
+          </td>
+          <td class="book-searchable">2018</td>
+          <td>Life story</td>
+         </tr>
+         <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">Russian Roulette</a>
+           <span class="tool-tiptext">
+            <img src="">RUSSIAN ROULETTE is a story of political skullduggery unprecedented in American history. It weaves together tales of international intrigue, cyber espionage, and superpower rivalry. After U.S.-Russia relations soured, as Vladimir Putin moved to reassert Russian strength on the global stage, Moscow trained its best hackers and trolls on U.S. political targets and exploited WikiLeaks to disseminate information that could affect the 2016 election. </span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">Michael Isikoff</a>
+          </td>
+          <td class="book-searchable">2018</td>
+          <td>Drama</td>
+         </tr>
+		 <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">Don Quixote</a>
+           <span class="tool-tiptext">
+            <img src="">is a Spanish novel by Miguel de Cervantes Saavedra. Published in two volumes, in 1605 and 1615, Don Quixote is considered the most influential work of literature from the Spanish Golden Age and the entire Spanish literary canon. As a founding work of modern Western literature and one of the earliest canonical novels, it regularly appears high on lists of the greatest works of fiction ever published, such as the Bokklubben World Library collection that cites Don Quixote as the authors' choice for the "best literary work ever written". </span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">Miguel de Cervantes</a>
+          </td>
+          <td class="book-searchable">1605</td>
+          <td>Literature</td>
+         </tr>
+		 <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">In Search of Lost Time</a>
+           <span class="tool-tiptext">
+            <img src="">Swann's Way, the first part of A la recherche de temps perdu, Marcel Proust's seven-part cycle, was published in 1913. In it, Proust introduces the themes that run through the entire work. The narrator recalls his childhood, aided by the famous madeleine; and describes M. Swann's passion for Odette. The work is incomparable. Edmund Wilson said "[Proust] has supplied for the first time in literature an equivalent in the full scale for the new theory of modern physics." </span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">Marcel Proust</a>
+          </td>
+          <td class="book-searchable">2014</td>
+          <td>Drama</td>
+         </tr>
+		 <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">The Odyssey</a>
+           <span class="tool-tiptext">
+            <img src="">The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is, in part, a sequel to the Iliad, the other work traditionally ascribed to Homer.</span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">Homer</a>
+          </td>
+          <td class="book-searchable">1999</td>
+          <td>Literature</td>
+         </tr>
+		 <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">The Divine Comedy</a>
+           <span class="tool-tiptext">
+            <img src="">Belonging in the immortal company of the great works of literature, Dante Alighieri's poetic masterpiece, The Divine Comedy, is a moving human drama, an unforgettable visionary journey through the infinite torment of Hell, up the arduous slopes of Purgatory, and on to the glorious realm of Paradise — the sphere of universal harmony and eternal salvation.</span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">Dante Alighieri</a>
+          </td>
+          <td class="book-searchable">2003</td>
+          <td>Fiction</td>
+         </tr>
+		 <tr>
+          <td class="books-book-name">
+           <a href="#" class="book-searchable">The Great Gatsby</a>
+           <span class="tool-tiptext">
+            <img src="">The novel chronicles an era that Fitzgerald himself dubbed the "Jazz Age". Following the shock and chaos of World War I, American society enjoyed unprecedented levels of prosperity during the "roaring" 1920s as the economy soared.  </span>
+          </td>
+          <td class="books-Author-name">
+           <a href="#" class="book-searchable">F. Scott Fitzgerald</a>
+          </td>
+          <td class="book-searchable">2004</td>
+          <td>Fiction</td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+    <div class="section -pattern -light">
+
+    </div>
+
+    <div class="layout--footer">
+     <footer class="footer">
+      <div class="footer--inner">
+       <div class="container">
+        <div class="footer-copyrights">
+         <div class="footer-copyrights--container">
+          <div class="row">
+           <div class="col-sm-6 col-xs-12">
+            <div class="footer-copyrights--item">
+             <div class="footer-copyrights--logo">
+               <img src="assets/logo.png" alt="hello-books logo"  >
+             </div>
+            </div>
+           </div>
+           <div class="col-sm-6 col-xs-12">
+            <div class="footer-copyrights--item">
+             <p class="footer-copyrights--item_copyrights">Copyright Hello-Books 2018&copy;.</p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+
+  </div>
+ </div>
+ <script type="text/javascript">
+  //JQuery scripts
+  $(function () {
+   if ($('.c-hamburger').length) { //for nav menu 
+    const toggleHandler = function toggleHandler(toggle) {
+     toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      this.classList.contains('is-active') === true ? this.classList.remove(
+       'is-active') : this.classList.add('is-active');
+      $('.header-nav .menu').slideToggle();
+     });
+    };
+
+    const toggles = document.querySelectorAll('.c-hamburger');
+
+    for (let i = toggles.length - 1; i >= 0; i--) {
+     const toggle = toggles[i];
+     toggleHandler(toggle);
+    };
+   }
+   $('#chk_all').change(function () {
+    if ($('#chk_all').prop('checked')) { //if checked
+     $('.checkbox').prop('checked', false);
+     $('.checkbox').attr('disabled', true);
+     $('#chk_all').attr('disabled', false);
+     $('#chk_all').prop('checked', true);
+    } else {
+     $('.checkbox').attr('disabled', false);
+    }
+   });
+  });
+ </script>
+ <script type="text/javascript ">
+        let msgModalBox = document.getElementById('msg-modal');
+        let closebtn = document.getElementById('closebtn');
+
+        function clsbtn() {
+            msgModalBox.style.display = "none";
+        }
+
+        function borrowBookModal() {
+            msgModalBox.style.display = "block";
+        }
+
+        function msgModal(msgText) {
+            let msgSubject = msgText.getElementsByTagName('td')[0].innerHTML;
+            let msgTextmsg = msgText.getElementsByTagName('td')[1].innerHTML;
+
+            document.getElementById('modal-head').innerHTML = 'Subject: ' + msgSubject;
+            document.getElementById('modal-body').innerHTML = '<p>' + msgTextmsg + '</p>';
+            msgModalBox.style.display = "block";
+        }
+
+        function bookSearch(searchField) {
+            // Declare found as default false
+            let found = false;
+            //convert method's value to uppercase
+            const filterSearch = searchField.value.toUpperCase();
+            //get HTML of entire table
+            const tableSearch = document.getElementById('all-books-table');
+            //return indexed HTML of columns in the tbody tag
+            const tbodySearch = tableSearch.getElementsByTagName('tbody');
+            const trSearch = tbodySearch[0].getElementsByTagName('tr');
+
+
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (let i = 0; i < trSearch.length; i++) {
+                //Search through all elements that have been classed for searching
+                let tSearch = trSearch[i].getElementsByClassName('book-searchable');
+
+                for (let j = 0; j < tSearch.length; j++) {
+                    if (tSearch[j].innerHTML.toUpperCase().includes(filterSearch) == true) {
+                        found = true;
+                    }
+                }
+                if (found) {
+                    trSearch[i].style.display = "";
+                    found = false;
+                } else {
+                    trSearch[i].style.display = "none";
+                }
+
+            }
+        }
+
+        function shwUsrProfile() { //if profile is clicked
+            document.getElementById('profile-stuff').classList.toggle('show');
+        }
+        window.onclick = function (event) { //if any part of window is clicked
+            if (event.target.matches('msgModalBox')) {
+                msgModalBox.style.display = "none";
+            }
+            if (!event.target.matches('.usrBtn') && !event.target.matches('.menu-item-Usr')) { //if outside the profile is clicked
+
+                const dropdowns = document.getElementsByClassName('profile-dropdown');
+
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) { //show or hide that menu
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
